@@ -1,5 +1,6 @@
 package org.foobarspam.cotxox.carrera;
 
+import org.foobarspam.cotxox.conductores.PoolConductores;
 import org.foobarspam.cotxox.tarifa.Tarifa;
 
 public class Carrera {
@@ -60,5 +61,8 @@ public class Carrera {
 	public double getCosteEsperado() {
 		nuevaTarifa = new Tarifa(distancia, tiempoEsperadoMinutos);
 		return nuevaTarifa.getCosteTotalEsperado();
+	}
+	public void asignarConductor(PoolConductores conductores) {
+		
 	}
 }

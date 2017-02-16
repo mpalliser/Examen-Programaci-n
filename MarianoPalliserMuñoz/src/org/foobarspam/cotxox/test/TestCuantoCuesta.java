@@ -25,7 +25,6 @@ public class TestCuantoCuesta {
 		assertEquals(carrera.getCosteEsperado(), tarifa.getCosteTotalEsperado(), 0);
 		assertEquals(tarifa.getCosteDistancia(distancia), distancia * tarifa.getCosteMilla(), 0);
 		assertEquals(tarifa.getCosteTiempo(tiempoEsperadoMinutos),tiempoEsperadoMinutos * tarifa.getCosteMinuto(),0);
-
 	}
 
 }
