@@ -1,25 +1,34 @@
 package org.foobarspam.cotxox.carrera;
 
+import org.foobarspam.cotxox.tarifa.Tarifa;
+
 public class Carrera {
 	
 	// ---------  PROPIEDADES  ----------
-	private String origen = null;
-	private String destino = null;
-	private double distancia = 0.0d;
-	private int tiempoEsperadoMinutos = 0;
-	private String tarjetaCredito = null;
+	
+	private String origen;
+	private String destino;
+	private double distancia;
+	private int tiempoEsperadoMinutos;
+	private String tarjetaCredito;
+	private Tarifa nuevaTarifa;
 	
 	// --------- CONSTRUCTORES ----------
 	public Carrera(){
 	}
 	public Carrera(String tarjetaCredito){
 		this.tarjetaCredito = tarjetaCredito;
-	}
-	public void setOrigen(String origen) {
-		this.origen = origen;
+		this.origen = null;
+		this.destino = null;
+		this.distancia = 0.0d;
+		this.tiempoEsperadoMinutos = 0;
+		this.tarjetaCredito = null;
 	}
 	
 	// ---------   GETTERS y SETTERS	   ----------
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
 	public void setDestino(String destino){
 		this.destino = destino;
 	}
@@ -44,6 +53,12 @@ public class Carrera {
 	public int getTiempoEsperado() {
 		return this.tiempoEsperadoMinutos;
 	}
+
 	
 	// ---------   METODOS	   ----------
+	
+	public double getCosteEsperado() {
+		nuevaTarifa = new Tarifa(distancia, tiempoEsperadoMinutos);
+		return nuevaTarifa.getCosteTotalEsperado();
+	}
 }
