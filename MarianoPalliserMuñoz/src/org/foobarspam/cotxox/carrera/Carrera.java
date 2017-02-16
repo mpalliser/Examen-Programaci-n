@@ -13,8 +13,10 @@ public class Carrera {
 	private double distancia;
 	private int tiempoEsperadoMinutos;
 	private String tarjetaCredito;
-	private Tarifa nuevaTarifa = null;
+	private Tarifa nuevaTarifa;
 	private Conductor conductor = null;
+	private double costeTotal = 0;
+	private int totalPropinas = 0;
 	
 	// --------- CONSTRUCTORES ----------
 	public Carrera(){
@@ -25,7 +27,6 @@ public class Carrera {
 		this.destino = null;
 		this.distancia = 0.0d;
 		this.tiempoEsperadoMinutos = 0;
-		this.tarjetaCredito = null;
 	}
 	
 	// ---------   GETTERS y SETTERS	   ----------
@@ -73,5 +74,17 @@ public class Carrera {
 	}
 	public Conductor getConductor() {
 		return this.conductor;
+	}
+	public void realizarPago(double costeEsperado) {
+		costeTotal = costeEsperado;
+	}
+	public void recibirPropina(int propina) {
+		totalPropinas = totalPropinas + propina;
+	}
+	public int getPropina() {
+		return this.totalPropinas;
+	}
+	public void liberarConductor() {
+		this.conductor.setOcupado(false);
 	}
 }

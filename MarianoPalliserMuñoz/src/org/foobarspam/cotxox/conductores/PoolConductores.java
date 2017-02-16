@@ -12,7 +12,7 @@ public class PoolConductores {
 	public Conductor asignarConductor(){
 		Conductor conductorAleatorio = null;
 		int totalConductores = poolConductores.size();
-		int numeroEnRangoRandom = ThreadLocalRandom.current().nextInt(0,totalConductores-1);
+		int numeroEnRangoRandom = ThreadLocalRandom.current().nextInt(0,totalConductores);
 		
 		conductorAleatorio = poolConductores.get(numeroEnRangoRandom);
 		conductorAleatorio.setOcupado(true);
