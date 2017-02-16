@@ -111,5 +111,12 @@ public class Cotxox {
 		System.out.println("Total: " + carrera.getCosteEsperado());
 		System.out.println("Ocupado?: " + carrera.getConductor().isOcupado());
 		
+		
+		System.out.println("\n#####"  + "\t Rate your driver: \t" + "#####\n" );
+		
+		carrera.getConductor().setValoracion((byte) 5);
+		
+		System.out.println("Driver: " + carrera.getConductor().getNombre());
+		System.out.println("Stars: " + carrera.getConductor().getValoracion());
 	}
 }

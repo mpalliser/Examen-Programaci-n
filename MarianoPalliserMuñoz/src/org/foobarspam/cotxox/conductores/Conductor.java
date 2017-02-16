@@ -1,17 +1,19 @@
 package org.foobarspam.cotxox.conductores;
 
+import java.util.ArrayList;
+
 public class Conductor {
 	private String nombre = null;
 	private String matricula;
 	private String modelo;
-	private byte valoracion;
+	private byte valoracionMedia = 0;
+	ArrayList<Byte> valoraciones = new ArrayList<Byte>();	
 	private boolean ocupado;
-
+	
 	public Conductor(String nombre) {
 		this.nombre = nombre;
 		this.matricula = null;
 		this.modelo = null;
-		this.valoracion = 0;
 		this.ocupado = false;
 	}
 
@@ -24,7 +26,7 @@ public class Conductor {
 	}
 
 	public void setValoracion(byte valoracion) {
-		this.valoracion = valoracion;
+		valoraciones.add(valoracion);
 	}
 	public boolean getOcupado(){
 		return this.ocupado;
@@ -46,7 +48,10 @@ public class Conductor {
 	}
 
 	public byte getValoracion() {
-		return this.valoracion;
+		for (byte valoracion : valoraciones){
+			valoracionMedia = (byte) ((byte) (valoracionMedia + valoracion) / valoraciones.size());
+		}
+		return this.valoracionMedia;
 	}
 
 	public boolean isOcupado() {
