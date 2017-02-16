@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import org.foobarspam.cotxox.conductores.Conductor;
+import org.foobarspam.cotxox.conductores.PoolConductores;
 import org.junit.Test;
 
 public class TestInformacionConductor {
@@ -30,6 +31,7 @@ public class TestInformacionConductor {
 			conductora.setValoracion((byte) 4);
 			index++;
 		}
+		PoolConductores conductores = new PoolConductores(poolConductores);
 		for (Conductor driver : poolConductores){
 			assertEquals(driver.getClass(), conductor.getClass());
 		}
