@@ -49,7 +49,7 @@ public class TestRateYourDriver {
 		carrera.realizarPago(carrera.getCosteEsperado());
 		carrera.recibirPropina(1);
 		carrera.liberarConductor();
-		assertEquals(carrera.getConductor().getValoracion(), 4);
+		assertEquals(carrera.getConductor().getValoracion(), 4, 0);
 		carrera.getConductor().setValoracion((byte) 5);
 		assertEquals(carrera.getConductor().getValoracion(), 4.5, 0);
 

@@ -4,17 +4,14 @@ import java.util.ArrayList;
 
 public class Conductor {
 	private String nombre = null;
-	private String matricula;
-	private String modelo;
-	private byte valoracionMedia = 0;
-	ArrayList<Byte> valoraciones = new ArrayList<Byte>();	
-	private boolean ocupado;
+	private String matricula = null;
+	private String modelo = null;
+	private float valoracionMedia = 0;
+	ArrayList<Float> valoraciones = new ArrayList<>();	
+	private boolean ocupado = false;
 	
 	public Conductor(String nombre) {
 		this.nombre = nombre;
-		this.matricula = null;
-		this.modelo = null;
-		this.ocupado = false;
 	}
 
 	public void setMatricula(String matricula) {
@@ -26,7 +23,7 @@ public class Conductor {
 	}
 
 	public void setValoracion(byte valoracion) {
-		valoraciones.add(valoracion);
+		valoraciones.add((float) valoracion);
 	}
 	public boolean getOcupado(){
 		return this.ocupado;
@@ -47,9 +44,9 @@ public class Conductor {
 		return this.matricula;
 	}
 
-	public byte getValoracion() {
-		for (byte valoracion : valoraciones){
-			valoracionMedia = (byte) ((byte) (valoracionMedia + valoracion) / valoraciones.size());
+	public float getValoracion() {
+		for (Float valoracion : valoraciones){
+			valoracionMedia =  (valoracionMedia + valoracion) / valoraciones.size();
 		}
 		return this.valoracionMedia;
 	}
