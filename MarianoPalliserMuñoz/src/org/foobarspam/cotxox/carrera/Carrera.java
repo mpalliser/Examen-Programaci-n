@@ -8,28 +8,26 @@ public class Carrera {
 	
 	// ---------  PROPIEDADES  ----------
 	
-	private String origen;
-	private String destino;
-	private double distancia;
-	private int tiempoEsperadoMinutos;
-	private String tarjetaCredito;
+	private String origen = null;
+	private String destino = null;
+	private double distancia = 0.0d;
+	private int tiempoEsperadoMinutos = 0;
+	private String tarjetaCredito = null;
 	private Tarifa nuevaTarifa;
 	private Conductor conductor = null;
 	private double costeTotal = 0;
 	private int totalPropinas = 0;
 	
 	// --------- CONSTRUCTORES ----------
+	
 	public Carrera(){
 	}
 	public Carrera(String tarjetaCredito){
 		this.tarjetaCredito = tarjetaCredito;
-		this.origen = null;
-		this.destino = null;
-		this.distancia = 0.0d;
-		this.tiempoEsperadoMinutos = 0;
 	}
 	
 	// ---------   GETTERS y SETTERS	   ----------
+	
 	public void setOrigen(String origen) {
 		this.origen = origen;
 	}

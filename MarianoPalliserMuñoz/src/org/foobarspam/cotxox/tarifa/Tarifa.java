@@ -13,12 +13,14 @@ public class Tarifa extends Carrera {
 	private double minutos = 0.0d;
 	
 	// --------- CONSTRUCTORES ----------
+	
 	public Tarifa(double distancia, double minutos){
 		this.distancia = distancia;
 		this.minutos = minutos;
 	}
 
 	// ---------   METODOS	   ----------
+	
 	public double getCosteMinuto(){
 		return this.costeMinuto;
 	}

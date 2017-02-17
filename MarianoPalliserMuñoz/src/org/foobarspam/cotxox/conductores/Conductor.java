@@ -3,16 +3,23 @@ package org.foobarspam.cotxox.conductores;
 import java.util.ArrayList;
 
 public class Conductor {
+	
+	// --------- PROPIEDADES ----------
+
 	private String nombre = null;
 	private String matricula = null;
 	private String modelo = null;
 	private float valoracionMedia = 0;
 	ArrayList<Float> valoraciones = new ArrayList<>();	
 	private boolean ocupado = false;
-	
+		
+	// --------- CONSTRUCTORES ----------
+
 	public Conductor(String nombre) {
 		this.nombre = nombre;
 	}
+
+	// ---------   METODOS	   ----------
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
